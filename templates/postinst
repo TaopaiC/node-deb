@@ -25,7 +25,7 @@ addUser() {
 
   if ! getent passwd | grep -q "^$user:"; then
     echo "Creating system user: $user in $group with $descr and shell $shell"
-    useradd $uid_flags --gid $group --system --shell $shell -c "$descr" $user
+    useradd $uid_flags --gid $group --create-home --system --shell $shell -c "$descr" $user
   fi
 }
 
